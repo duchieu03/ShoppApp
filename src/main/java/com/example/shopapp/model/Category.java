@@ -2,17 +2,14 @@ package com.example.shopapp.model;
 
 import com.example.shopapp.core.model.BaseModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
 import org.springframework.data.repository.NoRepositoryBean;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
-@NoRepositoryBean
 @Builder
 @Entity
 @Table(name = "categories")

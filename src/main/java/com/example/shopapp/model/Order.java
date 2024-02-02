@@ -50,7 +50,8 @@ public class Order extends BaseModel {
     private LocalDateTime orderDate;
 
     @Column(name = "status")
-    private String status;
+    @Convert(converter = OrderStatus.OrderConverter.class)
+    private OrderStatus status;
 
     @Column(name = "total_money")
     private Float totalMoney;

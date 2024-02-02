@@ -3,20 +3,18 @@ package com.example.shopapp.model;
 import com.example.shopapp.core.model.BaseModel;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
 import org.springframework.data.repository.NoRepositoryBean;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoRepositoryBean
+@NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "products")
@@ -29,7 +27,7 @@ public class Product extends BaseModel {
     @Column(name = "name", nullable = false, length = 350)
     private String name;
 
-    private Float price;
+    private BigDecimal price;
 
     @Column(name = "thumbnail", length = 300)
     private String thumbnail;

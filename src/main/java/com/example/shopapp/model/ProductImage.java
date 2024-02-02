@@ -3,17 +3,12 @@ package com.example.shopapp.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.SQLRestriction;
-import org.springframework.data.repository.NoRepositoryBean;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoRepositoryBean
+@NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "product_images")

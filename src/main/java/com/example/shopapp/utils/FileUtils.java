@@ -19,7 +19,7 @@ public class FileUtils {
         return path.contains(type);
     }
 
-    public static String storeFile(MultipartFile file, String path) throws IOException {
+    public static String storeFile(MultipartFile file) throws IOException {
         String filename = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
         String uniqueFilename = UUID.randomUUID().toString() + "_" + filename;
         Path uploadDir = Paths.get(UPLOAD_DIRECTORY);
@@ -29,5 +29,10 @@ public class FileUtils {
         Path destination = Paths.get(uploadDir.toString(), uniqueFilename);
         Files.copy(file.getInputStream(), destination, StandardCopyOption.REPLACE_EXISTING);
         return uniqueFilename;
+    }
+
+    public static void deleteFile(String filename) throws IOException {
+        Path filePath = Paths.get(UPLOAD_DIRECTORY, filename);
+        Files.deleteIfExists(filePath);
     }
 }

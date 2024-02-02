@@ -1,4 +1,4 @@
-package com.example.shopapp.controller;
+package com.example.shopapp.rest;
 
 import com.example.shopapp.dto.request.UserLoginRequest;
 import com.example.shopapp.dto.request.UserRequest;
